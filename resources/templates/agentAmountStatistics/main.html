@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap-table/bootstrap-table.min.css}">
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/bootstrap-table.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/extensions/export/bootstrap-table-export.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/plugins/table-export/tableexport.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common/bootstrap-table-extends.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/agentAmountStatistics/main.css}">
+    <script type="text/javascript" th:src="@{/js/agentAmountStatistics/main.js}"></script>
+
+    <script type="text/javascript" th:src="@{/js/agentAmountStatistics/info.js}"></script>
+
+    <script type="text/javascript" th:src="@{/js/agentAmountStatistics/afterSales.js}"></script>
+    <title>代理商订单额统计</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span class="font-weight-bold">查询条件</span>
+            </div>
+            <div class="panel-body">
+                <form class="form-inline page-data-query-form" role="form" id="page-data-query-form">
+                    <div class="form-group col-xs-3">
+                        <input class="form-control length-select" name="dateTime" id="agentDatetime" placeholder="时间查询">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row-fluid col-xs-12">
+        <div id="toolbar">
+        </div>
+
+        <table id="page-data-table"></table>
+    </div>
+
+    <div class="row-fluid col-xs-12" id="info-after-sales-row">
+        <div class="col-xs-6">
+            <div id="toolbar-info">
+            </div>
+            <table id="page-data-info-table"></table>
+        </div>
+        <div class="col-xs-6">
+            <div id="toolbar-after-sales">
+            </div>
+            <table id="page-data-after-sales-table"></table>
+        </div>
+    </div>
+    <div class="row-fluid col-xs-6" id="queryPanel" style="margin-top: 50px">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <span class="font-weight-bold">查询总金额</span>
+            </div>
+            <div class="panel-body">
+                <div class="col-xs-4">
+                    <p id="total"></p>
+                </div>
+                <div class="col-xs-4">
+                    <p id="refundOrderInfoTotal"></p>
+                </div>
+                <div class="col-xs-4">
+                    <p id="orderInfoTotal"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

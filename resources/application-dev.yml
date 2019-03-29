@@ -1,0 +1,21 @@
+server:
+  port: 8089
+
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://192.168.101.218:3306/shop_dev?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: dbuser
+      password: 123456
+
+system-config:
+  api-gateway-params:
+    outer-main-url: 'http://192.168.101.218:51002/'
+    inner-main-url: 'http://192.168.101.218:51002/'
+  aliyun-oss-params:
+    resource-bucket-url: 'https://young-shop-t.oss-cn-hangzhou.aliyuncs.com/'
+  resource-server-params:
+    attachment-origin: MANAGER
+  oauth-params:
+    client-id: app
+    client-secret: 111111

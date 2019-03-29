@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap-multiselect/bootstrap-multiselect.css}">
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-multiselect/bootstrap-multiselect.min.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/sku/edit.css}">
+    <script type="text/javascript" th:src="@{/js/sku/edit.js}"></script>
+
+    <title>编辑sku信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">基本信息<span class="pull-right">提示:1.sku名称不填,名称则是spu名称和属性选项组合</span></div>
+            <div class="panel-body">
+                <form class="form-horizontal col-xs-12" id="edit-form">
+                    <input type="hidden" name="id">
+                    <div class="form-horizontal col-xs-3">
+                        <div class="form-group" id="option-template">
+                            <div class="input-group">
+                                <span class="input-group-addon span-item-length"></span>
+                                <select class="form-control">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon span-four-length">备案编号</span>
+                                <input type="text" class="form-control" name="recordNo" placeholder="备案编号">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon span-item-length">sku名称</span>
+                                <input type="text" class="form-control" name="name" id="spuName" placeholder="sku名称">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon span-four-length">库存数量</span>
+                                <input type="text" class="form-control" name="stockNum" placeholder="库存数量" th:value="0">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">最小计量单位</span>
+                                <input type="text" class="form-control" name="minimumUnitOfMeasure" placeholder="最小计量单位" th:value="1">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-horizontal col-xs-offset-1 col-xs-3">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">打包重量</span>
+                                <input type="text" class="form-control" name="packagedWeight" placeholder="打包重量" th:value="0">
+                                <span class="input-group-addon">kg</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">备案价格</span>
+                                <input type="text" class="form-control" name="recordPrice" placeholder="备案价格" value="0">
+                                <span class="input-group-addon">元</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">成本价格</span>
+                                <input type="text" class="form-control" name="costPrice" placeholder="成本价格">
+                                <span class="input-group-addon">元</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">市场价格</span>
+                                <input type="text" class="form-control" name="marketPrice" placeholder="市场价格">
+                                <span class="input-group-addon">元</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">代理价格</span>
+                                <input type="text" class="form-control" name="agentPrice" placeholder="代理价格">
+                                <span class="input-group-addon">元</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">零售价格</span>
+                                <input type="text" class="form-control" name="retailPrice" placeholder="零售价格">
+                                <span class="input-group-addon">元</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">税费价格</span>
+                                <input type="text" class="form-control" name="taxPrice" placeholder="税费价格" value="0">
+                                <span class="input-group-addon">元</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon span-four-length">简介</span>
+                                <input type="text" class="form-control" name="summary" id="spuSummary" placeholder="简介">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-horizontal col-xs-offset-1 col-xs-4">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon span-length">物流模板</span>
+                                <select class="form-control" name="logisticTemplate.id" id="logistic-template-select"></select>
+                            </div>
+                        </div>
+                        <!--<div class="form-group">-->
+                            <!--<div class="input-group">-->
+                                <!--<span class="input-group-addon">商品状态</span>-->
+                                <!--<select class="form-control" name="goodsState" id="goods-state-select"></select>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon span-length">打包类型</span>
+                                <select class="form-control" name="packageType" id="package-type-select"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" style="padding: 0 19px">是否开启返利</span>
+                                <select  class="form-control" name="enableRebate" id="enableRebateSelected">
+                                    <option value="false">否</option>
+                                    <option value="true">是</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" id="rebate-rule-show">
+                            <div class="input-group">
+                                <span class="input-group-addon span-length">返利规则</span>
+                                <select id="rebate-rule-multiple-selected" multiple="multiple" style="border-left:none;border-radius:0px;">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon span-length">仓库名称</span>
+                                <select class="form-control" name="repertory.id" id="repertory-list"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon span-length">商品型号</span>
+                                <select class="form-control" name="goodsModel.id" id="goods-model-list">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon span-length">打包规格</span>
+                                <select class="form-control" name="packageSpecification.id" id="package-specification-list">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" >是否上传身份证</span>
+                                <select  class="form-control" name="uploadIdCardImage">
+                                    <option value="false">否</option>
+                                    <option value="true">是</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

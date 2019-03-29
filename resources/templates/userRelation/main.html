@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/userRelation/main.css}">
+    <script type="text/javascript" th:src="@{/js/userRelation/main.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/echarts.min.js}"></script>
+    <title>查看用户子级关系</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+
+        <strong>提示:黑色节点无子级节点</strong>
+
+        <div id="chartMain" style="width:1200px; height: 750px;"></div>
+    </div>
+</div>
+</body>
+</html>

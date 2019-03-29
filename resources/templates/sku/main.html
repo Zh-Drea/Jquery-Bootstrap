@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap-table/bootstrap-table.min.css}">
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/bootstrap-table.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/extensions/export/bootstrap-table-export.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/plugins/table-export/tableexport.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common/bootstrap-table-extends.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/sku/main.css}">
+    <script type="text/javascript" th:src="@{/js/sku/main.js}"></script>
+    <title>SPU信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span class="font-weight-bold">查询条件</span>
+                <button id="page-data-query-btn" type="button" class="btn btn-primary btn-xs pull-right">查&nbsp;&nbsp;询</button>
+            </div>
+            <div class="panel-body">
+                <form class="form-inline page-data-query-form" role="form" id="page-data-query-form">
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control" name="name" placeholder="sku名称">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="toolbar-sku">
+        <div class="btn-group">
+            <button id="btn-add" type="button" class="btn btn-default" data-title="添加-sku信息" data-handle="save">
+                <span aria-hidden="true"></span>添加
+            </button>
+            <button id="btn-edit" type="button" class="btn btn-default" data-title="修改-sku信息" data-handle="update">
+                <span aria-hidden="true"></span>修改
+            </button>
+            <button id="btn-del" type="button" class="btn btn-default" data-handle="delete">
+                <span aria-hidden="true"></span>删除
+            </button>
+        </div>
+        <div class="btn-group">
+            <button id="btn-add-batch" type="button" class="btn btn-default" data-title="批量添加-sku信息" data-handle="add-batch">
+                <span aria-hidden="true"></span>批量添加
+            </button>
+        </div>
+        <div class="btn-group">
+            <button id="btn-edit-banner" type="button" class="btn btn-default" data-title="编辑-banner图附件" data-handle="edit-banner">
+                <span aria-hidden="true"></span>banner图管理
+            </button>
+        </div>
+        <div class="btn-group">
+            <button id="btn-edit-detail" type="button" class="btn btn-default" data-title="编辑-明细图附件" data-handle="edit-detail">
+                <span aria-hidden="true"></span>明细图管理
+            </button>
+        </div>
+        <div class="btn-group">
+            <button id="btn-edit-slideshow" type="button" class="btn btn-default" data-title="编辑-轮播图附件" data-handle="edit-slideshow">
+                <span aria-hidden="true"></span>轮播图管理
+            </button>
+        </div>
+        <div class="btn-group">
+            <button id="btn-sku-shelves" type="button" class="btn btn-default" data-handle="sku-shelves">
+                <span aria-hidden="true"></span>上架
+            </button>
+        </div>
+        <div class="btn-group">
+            <button id="btn-out-sku-shelves" type="button" class="btn btn-default" data-handle="out-sku-shelves">
+                <span aria-hidden="true"></span>下架
+            </button>
+        </div>
+        <div class="btn-group">
+            <button id="btn-copy-sku" type="button" class="btn btn-default" data-handle="copy-sku">
+                <span aria-hidden="true"></span>拷贝sku
+            </button>
+        </div>
+        <div class="btn-group">
+            <button id="btn-copy" type="button" class="btn btn-default" data-handle="image-copy">
+                <span aria-hidden="true"></span>复制资源图片
+            </button>
+        </div>
+    </div>
+
+    <table id="page-sku-data-table"></table>
+</div>
+</body>
+</html>

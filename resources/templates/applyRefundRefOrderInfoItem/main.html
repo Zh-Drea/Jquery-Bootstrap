@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap-table/bootstrap-table.min.css}">
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/bootstrap-table.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/extensions/export/bootstrap-table-export.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/plugins/table-export/tableexport.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common/bootstrap-table-extends.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/applyRefundRefOrderInfoItem/main.css}">
+    <script type="text/javascript" th:src="@{/js/applyRefundRefOrderInfoItem/main.js}"></script>
+    <title>售后订单信息展示</title>
+</head>
+<body>
+<div class="container-fluid">
+
+    <div id="toolbar-item">
+
+    </div>
+
+    <table id="page-item-data-table"></table>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+#li-template,#option-template {
+    display: none;
+}
+.span-four-length {
+    padding-left: 26px;
+    padding-right: 26px;
+}
+.sku-name-length {
+    padding: 0 26px;
+}
+.name-length{
+    padding:0 29px;
+}
+.glyphicon-remove,.glyphicon-plus:hover {
+    cursor:pointer;
+}
+/*.li-position{*/
+    /*margin-top: 15px !important;*/
+/*}*/
+.add-position{
+    margin-top: 15px !important;
+}
+.delete-position{
+    position: absolute;
+    margin-left: 53px;
+}

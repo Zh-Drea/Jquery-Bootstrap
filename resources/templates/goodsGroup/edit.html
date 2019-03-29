@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/goodsGroup/edit.css}">
+    <script type="text/javascript" th:src="@{/js/goodsGroup/edit.js}"></script>
+    <title>商品分类信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid col-xs-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">基本信息</div>
+            <div class="panel-body">
+                <form class="form-horizontal col-xs-11" id="edit-form">
+                    <input type="hidden" name="id">
+                    <input type="hidden" name="imageAttachment.id" id="imageAttachmentId">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="inputSpan1">分类编码</span>
+                            <input type="text" class="form-control" name="code" placeholder="分类编码">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="inputSpan2">分类名称</span>
+                            <input type="text" class="form-control" name="name" placeholder="分类名称">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">是否主页显示</span>
+                            <select class="form-control" name="canShowHomePage">
+                                <option value="false"> 否</option>
+                                <option value="true">是</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group" id="parent-display">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="inputSpan3">父级分类</span>
+                            <select class="form-control" name="parentGoodsGroup">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="inputSpan4">是否启用</span>
+                            <select class="form-control" name="enable">
+                                <option value="true">是</option>
+                                <option value="false">否</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="inputSpan6">排序编号</span>
+                            <input type="text" class="form-control" name="orderNum" placeholder="排序编号" value="0">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="inputSpan5">备注</span>
+                            <input type="text" class="form-control" name="remark" placeholder="备注">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid col-xs-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">图标附件</div>
+            <div class="panel-body">
+                <img class="img-thumbnail resource-img-thumbnail-big" id="attachment-image">
+                <hr/>
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn layui-btn-normal" id="select-file-btn">选择文件</button>
+                    <button type="button" class="layui-btn pull-right" id="upload-file-btn">开始上传</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/login/main.css}">
+    <script type="text/javascript" th:src="@{/js/login/main.js}"></script>
+    <title>Login</title>
+</head>
+
+<script type="text/javascript">
+    function loadTopWindow(){
+        if (window.top!=null && window.top.document.URL!=document.URL){
+            window.top.location= document.URL;}
+    }
+</script>
+
+<body  onload="loadTopWindow()">
+<div class="container">
+    <div class="login-panel">
+        <div class="title-panel">后 台 登 录</div>
+        <hr>
+        <!-- login form begin -->
+        <form id="login-form" th:action="@{/toLogin}" method="post" autocomplete="off">
+
+            <div class="input-group-lg">
+                <input type="text" class="form-control" placeholder="用户名" onclick="checkOrOut()" name="username">
+            </div>
+            <div class="input-group-lg">
+                <input type="password" class="form-control" placeholder="密码" onclick="checkOrOut()" name="password">
+            </div>
+            <strong class="pull-left" id="login-tip" th:text="${errDesc}"></strong>
+            <button type="submit" data-loading-text="Submitting" class="btn btn-primary btn-lg pull-right" id="to-login-btn">登录</button>
+        </form>
+        <!-- login form end -->
+    </div>
+</div>
+</body>
+</html>

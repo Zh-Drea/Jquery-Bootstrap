@@ -1,0 +1,92 @@
+global-config:
+  swagger:
+    enable: true
+    title: Manager Api
+    description: "Document Api(URL: http://ip:port/swagger-ui.html)"
+    version: v1.0.0
+
+server:
+  port: 80
+  servlet:
+    session:
+      timeout: 2h
+
+spring:
+  application:
+    name: manager
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+  redis:
+    host: 192.168.101.218
+    port: 6379
+    password: null
+    database: 0
+    ssl: false
+  datasource:
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/shop_dev?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: root
+      password: root
+      initial-size: 1
+      max-active: 100
+      min-idle: 1
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      max-open-prepared-statements: 20
+      remove-abandoned: true
+      remove-abandoned-timeout: 1800
+      log-abandoned: false
+      filters: stat
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: true
+        login-username: admin
+        login-password: abcde_1234
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    database: mysql
+    show-sql: true
+    open-in-view: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  devtools:
+    restart:
+      enabled: true
+  thymeleaf:
+    cache: false
+    check-template: true
+    check-template-location: true
+    enabled: true
+    enable-spring-el-compiler: false
+    encoding: utf-8
+    mode: HTML
+    prefix: classpath:/templates/
+    suffix: .html
+    servlet:
+      content-type: text/html
+
+system-config:
+  api-gateway-params:
+    outer-main-url: 'http://192.168.101.218:51002/'
+    inner-main-url: 'http://192.168.101.218:51002/'
+  aliyun-oss-params:
+    resource-bucket-url: 'https://young-shop-t.oss-cn-hangzhou.aliyuncs.com/'
+  resource-server-params:
+    attachment-origin: MANAGER
+  oauth-params:
+    client-id: app
+    client-secret: 111111

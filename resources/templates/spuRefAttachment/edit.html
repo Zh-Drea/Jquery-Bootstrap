@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/spuRefAttachment/edit.css}">
+    <script type="text/javascript" th:src="@{/js/spuRefAttachment/edit.js}"></script>
+    <title>编辑banner图信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <form  id="edit-form">
+        <input type="hidden" name="imageAttachment.id" id="imageAttachmentId">
+        <div class="panel panel-default">
+            <div class="panel-heading">附件</div>
+            <div class="panel-body">
+                <img class="img-thumbnail resource-img-thumbnail-big" id="attachment-image">
+                <hr/>
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn layui-btn-normal" id="select-file-btn">选择文件</button>
+                    <button type="button" class="layui-btn pull-right" id="upload-file-btn">开始上传</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

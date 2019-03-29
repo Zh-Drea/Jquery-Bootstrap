@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/bannerGroupItemRefAttachment/edit.css}">
+    <script type="text/javascript" th:src="@{/js/bannerGroupItemRefAttachment/edit.js}"></script>
+    <title>明细图信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">明细图附件</div>
+        <div class="panel-body">
+            <input type="hidden" name="id">
+            <input type="hidden" name="imageAttachment.id" id="imageAttachmentId">
+            <input type="hidden" name="attachmentType" value="DETAIL">
+            <div id="images-panel">
+                <div id="image-item-template">
+                    <img class="img-thumbnail resource-img-detail-big">
+                    <span class="badge image-remove-badge">&times;</span>
+                    <input type="text" value="0">
+                </div>
+            </div>
+            <hr/>
+            <div class="layui-upload">
+                <button type="button" class="layui-btn layui-btn-normal" id="select-file-btn">选择文件</button>
+                <button type="button" class="layui-btn pull-right" id="upload-file-btn">开始上传</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

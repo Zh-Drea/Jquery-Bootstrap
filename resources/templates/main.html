@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/plugins/jquery-easyui/themes/material/easyui.css}">
+    <script type="text/javascript" th:src="@{/plugins/jquery-easyui/jquery.easyui.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/main/main.css}">
+    <script type="text/javascript" th:src="@{/js/main/main.js}"></script>
+    <title>Main</title>
+</head>
+<body>
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header header header-panel">
+        <div class="layui-main">
+            <a class="logo" href="#">
+                <img th:src="@{/images/logo.png}">
+            </a>
+            <ul class="layui-nav">
+                <li class="layui-nav-item">
+                    <a href="javascript:;" ><strong th:text="${session.manager.username}"></strong><span class="layui-nav-more"></span></a>
+                    <dl class="layui-nav-child">
+                        <dd><a id="basics">基本资料</a></dd>
+                        <dd><a id="changePassword">修改密码</a></dd>
+                        <hr/>
+                        <dd><a th:href="@{/logout}">退出系统</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item" style="display: none">
+                    <a th:href="@{/message/main}" layadmin-event="message" lay-text="消息中心">
+                        <i class="layui-icon layui-icon-notice"><span class="layui-badge">9</span></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="menu-panel" class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <ul id="menus" class="layui-nav layui-nav-tree site-menu-nav"></ul>
+        </div>
+    </div>
+    <div class="layui-body page-content-panel">
+        <div id="page-tabs"></div>
+    </div>
+
+    <div class="layui-footer footer footer-panel">
+        <div class="layui-main">
+            <p>© 2018 小洋匠后台管理系统</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

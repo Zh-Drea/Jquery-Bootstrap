@@ -1,0 +1,25 @@
+.span-four-length {
+    padding-left: 26px;
+    padding-right: 26px;
+}
+
+.span-two-length {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.span-three-length {
+    padding-left: 19.5px;
+    padding-right: 19.5px;
+}
+
+.span-item-length {
+    padding-left: 29.5px;
+    padding-right: 29.5px;
+}
+.span-length{
+    padding: 0 33px;
+}
+#option-template {
+    display: none;
+}

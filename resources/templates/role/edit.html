@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-treeview/bootstrap-treeview.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/role/edit.css}">
+    <script type="text/javascript" th:src="@{/js/role/edit.js}"></script>
+
+    <title>编辑角色管理信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">基本信息</div>
+            <div class="panel-body">
+                <form class="form-horizontal col-xs-5" id="edit-form">
+                    <input type="hidden" name="id">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">角色名称</span>
+                            <input type="text" class="form-control" name="name" placeholder="角色名称">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon span-column-length">备注</span>
+                            <input type="text" class="form-control" name="remark" placeholder="备注">
+                        </div>
+                    </div>
+
+                </form>
+                <div class="col-xs-6" id="tree"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

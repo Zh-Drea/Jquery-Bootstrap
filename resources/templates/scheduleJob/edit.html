@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/scheduleJob/edit.css}">
+    <script type="text/javascript" th:src="@{/js/scheduleJob/edit.js}"></script>
+
+    <title>编辑定时任务调度</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">基本信息</div>
+            <div class="panel-body">
+                <form class="form-horizontal col-xs-11" id="edit-form">
+                    <input type="hidden" name="id">
+                    <div class="form-horizontal col-xs-5">
+
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">任务名称</span>
+                                <input type="text" class="form-control" name="jobName" placeholder="任务名称">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">任务分组</span>
+                                <input type="text" class="form-control" name="jobGroup" placeholder="任务分组">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">服务地址 </span>
+                                <input type="text" class="form-control" name="serviceUrl" placeholder="服务地址">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">接口地址 </span>
+                                <input type="text" class="form-control" name="interfaceUrl" placeholder="接口地址">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-xs-5 pull-right">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">开启状态</span>
+                                <select class="form-control" id="schedule-status-select" name="scheduleStatus">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">详细备注</span>
+                                <input type="text" class="form-control" name="remark" placeholder="详细备注">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">定时任务表达式</span>
+                                <input type="text" class="form-control" name="cronExpression" placeholder="定时任务表达式">
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/spu/resetHot.css}">
+    <script type="text/javascript" th:src="@{/js/spu/resetHot.js}"></script>
+
+    <title>重置热门</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">基本信息</div>
+            <div class="panel-body">
+                <form class="form-horizontal col-xs-11" id="edit-form">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">热门个数</span>
+                            <input type="text" class="form-control" name="num" placeholder="热门个数">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

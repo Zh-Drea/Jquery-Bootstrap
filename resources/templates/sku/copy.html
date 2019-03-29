@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap-multiselect/bootstrap-multiselect.css}">
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-multiselect/bootstrap-multiselect.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/sku/copy.js}"></script>
+    <title>复制资源图片信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">基本信息</div>
+            <div class="panel-body">
+                <form class="form-horizontal col-xs-11" id="edit-form">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">分类选择</span>
+                            <select id="copy-group-multiple-selected" multiple="multiple" style="border-left:none;border-radius:0px;">
+                                <option value="plt1">banner图</option>
+                                <option value="plt2">明细图</option>
+                                <option value="plt3">轮播图</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

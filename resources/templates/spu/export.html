@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/spu/export.css}">
+    <script type="text/javascript" th:src="@{/js/spu/export.js}"></script>
+
+    <title>批量导出商品信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">基本信息</div>
+            <div class="panel-body">
+                <form th:action="@{/sku/exportSku}" class="form-horizontal col-xs-11" method="post">
+                    <input type="hidden" id="plt" name="exportSkuParams">
+
+                    <div class="form-group pull-right">
+                        <div class="input-group">
+                            <button type="submit" class="layui-btn">导出数据</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

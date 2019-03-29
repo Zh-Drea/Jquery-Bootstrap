@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap-table/bootstrap-table.min.css}">
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/bootstrap-table.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/extensions/export/bootstrap-table-export.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/plugins/table-export/tableexport.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common/bootstrap-table-extends.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/systemLog/main.css}">
+    <script type="text/javascript" th:src="@{/js/systemLog/main.js}"></script>
+    <title>物流公司信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span class="font-weight-bold">查询条件</span>
+                <button id="page-data-query-btn" type="button" class="btn btn-primary btn-xs pull-right">查&nbsp;&nbsp;询</button>
+            </div>
+            <div class="panel-body">
+                <form class="form-inline page-data-query-form" role="form" id="page-data-query-form">
+                    <div class="form-group col-xs-3">
+                        <input class="form-control length-select" name="startEndPayDatetime" id="startEndPayDatetime" placeholder="开始-结束时区">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <select class="form-control main-select-width" name="operationType" id="operation-type-select">
+                            <option value="">操作类型</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control" name="username" placeholder="操作用户">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control" name="operation" placeholder="具体操作">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="toolbar">
+        <button id="btn-query" type="button" class="btn btn-default" data-handle="query">
+            <span aria-hidden="true"></span>查看明细
+        </button>
+
+        <button id="btn-del" type="button" class="btn btn-default" data-handle="delete">
+            <span aria-hidden="true"></span>删除
+        </button>
+    </div>
+    <table id="page-data-table"></table>
+</div>
+</body>
+</html>

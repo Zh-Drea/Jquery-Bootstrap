@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/home/basics.css}">
+    <script type="text/javascript" th:src="@{/js/home/basics.js}"></script>
+    <title>基本资料</title>
+</head>
+<body>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <span class="font-weight-bold">修改基本资料</span>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal col-xs-12"  id="edit-form">
+            <div class="form-horizontal col-xs-4 col-xs-offset-4">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">电话号码</span>
+                        <input type="text" class="form-control" name="phoneNo" placeholder="电话号码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">真实姓名</span>
+                        <input type="text" class="form-control" name="realName" placeholder="真实姓名">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">邮箱地址</span>
+                        <input type="text" class="form-control" name="email" placeholder="邮箱地址">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon span-column-length">性别</span>
+                        <select class="form-control" id="sexual-list" name="sexual">
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon span-column-length">备注</span>
+                        <input type="text" class="form-control" name="remark" placeholder="备注">
+                    </div>
+                </div>
+                <div class="form-group pull-right">
+                    <div class="input-group">
+                        <button type="button" id="modifiedData" class="layui-btn">确认修改</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <strong id="managerId" class="conceal" th:text="${session.manager.id}"></strong>
+    </div>
+</div>
+</body>
+</html>

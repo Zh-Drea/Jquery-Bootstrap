@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap-table/bootstrap-table.min.css}">
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/bootstrap-table.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/extensions/export/bootstrap-table-export.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/plugins/table-export/tableexport.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common/bootstrap-table-extends.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/promotionMaterial/main.css}">
+    <script type="text/javascript" th:src="@{/js/promotionMaterial/main.js}"></script>
+    <title>推广素材</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span class="font-weight-bold">查询条件</span>
+                <button id="data-query-btn" type="button" class="btn btn-primary btn-xs pull-right">查&nbsp;&nbsp;询</button>
+            </div>
+            <div class="panel-body">
+                <form class="form-inline page-data-query-form" role="form" id="data-query-form">
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control main-select-width" name="phoneNo" placeholder="用户电话">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control main-select-width" name="goodsName" placeholder="商品名称">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <select class="form-control main-select-width"  id="audit-status-select" name="auditStatus">
+                            <option value="">请选择审核状态</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <input class="form-control" name="startEndAuditDatetime" style="width: 310px" id="startEndAuditDatetime" placeholder="審核時間开始-结束时区">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body col-xs-12" id="all">
+            <div id="li-template" class="col-xs-8 col-xs-offset-2" style="display: none;flex-direction: column;height: 466px;margin-top: 20px;border:1px dashed black">
+                 <div class="col-xs-10 hsk" style="margin-top: 15px;margin-left: 15px">
+                    <div class="col-xs-5 hsk"><strong>用户名:</strong><p id="userName"></p>&nbsp;&nbsp;&nbsp;</div>
+                    <div class="col-xs-5 hsk"><strong>审核状态:</strong><p id="auditStatus"></p>&nbsp;&nbsp;&nbsp;</div>
+                 </div>
+                 <div class="col-xs-10 hsk" style="margin-top: 15px;margin-left: 15px">
+                    <div class="col-xs-5 hsk"><strong>商品名:</strong><p id="goodsName"></p>&nbsp;&nbsp;&nbsp;</div>
+                    <div class="col-xs-5 hsk"><strong>审核时间:</strong><p id="auditDatetime"></p>&nbsp;&nbsp;&nbsp;</div>
+                 </div>
+                 <div class="col-xs-10 hsk" style="background-color: whitesmoke;height:100px;margin-top: 20px;margin-left: 40px "><p id="content" style="color: black;line-height: 24px"></p></div>
+                 <div class="col-xs-10 hsk" style="flex-wrap: wrap;margin-top: 20px;" id="mater-img"></div>
+                 <div class="hsk pull-right"><button id="success" class="btn btn-primary" style="margin-right: 25px;margin-top: 200px">通过</button><button id="fail" class="btn btn-primary" style="margin-top: 200px;margin-right: 25px">拒绝</button></div>
+            </div>
+            <div id="template"></div>
+        </div>
+    </div>
+
+    <div id="layPage" class="pull-right" style="margin-bottom: 50px ;margin-right: 50px"></div>
+
+</div>
+</body>
+</html>

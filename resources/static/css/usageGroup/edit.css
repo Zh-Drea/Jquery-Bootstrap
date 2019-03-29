@@ -1,0 +1,12 @@
+body {
+    padding: 10px !important;
+}
+
+#inputSpan3 {
+    padding-left: 26.1px;
+    padding-right: 26.1px;
+}
+
+#parent-display {
+    display: none;
+}

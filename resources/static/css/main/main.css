@@ -1,0 +1,118 @@
+body {
+    padding: 0 !important;
+}
+
+.layui-layout-admin .layui-header {
+    background-color: #23262e;
+}
+
+.header-panel {
+    height: 60px;
+    border-bottom: none;
+}
+
+.layui-header {
+    z-index: 1000;
+    height: 60px;
+}
+
+.header-panel .logo {
+    left: 40px;
+}
+
+.logo {
+    position: absolute;
+    left: 0;
+    top: 16px;
+}
+
+.layui-btn, .layui-edge, .layui-inline, img {
+    vertical-align: middle;
+}
+
+.layui-inline, img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logo img {
+    width: 82px;
+    height: 31px;
+}
+
+.header-panel .layui-nav {
+    top: 0;
+}
+
+#menu-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 60px;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    z-index: 10000;
+}
+
+.header .layui-nav {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    padding: 0;
+    background: none;
+}
+
+.header .layui-nav .layui-nav-item a {
+    padding: 0 30px !important;
+    vertical-align: center;
+}
+
+.header .layui-nav .layui-nav-item .layui-nav-child a {
+    padding: 10px 30px !important;
+    vertical-align: center;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+#menu-panel .layui-nav-item .layui-icon {
+    position: relative;
+    font-size: 20px;
+}
+
+body .page-content-panel {
+    bottom: 60px;
+    padding: 0;
+}
+
+iframe {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 1024px;
+}
+
+.page-iframe {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 45px;
+    right: 0;
+    bottom: 0;
+    background: #E6E6E6;
+}
+
+body .layui-layout-admin .footer-panel {
+    height: 50px;
+    padding: 5px 0;
+}
+
+.footer-panel p {
+    height: 50px;
+    padding-right: 10px;
+    display: inline-block;
+}
+.layui-nav-child:hover {
+    cursor: pointer;
+}

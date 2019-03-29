@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap-multiselect/bootstrap-multiselect.css}">
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-multiselect/bootstrap-multiselect.min.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/manager/edit.css}">
+    <script type="text/javascript" th:src="@{/js/manager/edit.js}"></script>
+
+    <title>编辑管理员信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">基本信息</div>
+            <div class="panel-body">
+                <form class="form-horizontal col-xs-11" id="edit-form">
+                    <input type="hidden" name="id">
+
+                    <div class="form-horizontal col-xs-5">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">用户名称</span>
+                                <input type="text" class="form-control" name="username" placeholder="用户名称">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">电话号码</span>
+                                <input type="text" class="form-control" name="phoneNo" placeholder="电话号码">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">真实姓名</span>
+                                <input type="text" class="form-control" name="realName" placeholder="真实姓名">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">邮箱地址</span>
+                                <input type="text" class="form-control" name="email" placeholder="邮箱地址">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-horizontal col-xs-5 pull-right">
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">角色</span>
+                                <select class="form-control" id="role-type-list" multiple="multiple" style="border-left:none;border-radius:0px;">
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">性别</span>
+                                <select class="form-control" id="sexual-list" name="sexual">
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">状态</span>
+                                <select class="form-control" id="account-state-list" name="accountState">
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">类型</span>
+                                <select class="form-control" id="manager-type-list" name="managerType">
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">备注</span>
+                                <input type="text" class="form-control" name="remark" placeholder="备注">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

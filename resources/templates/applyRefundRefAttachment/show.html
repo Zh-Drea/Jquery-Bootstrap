@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/applyRefundRefAttachment/show.css}">
+    <script type="text/javascript" th:src="@{/js/applyRefundRefAttachment/show.js}"></script>
+
+    <title>退款照片</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">基本信息</div>
+            <div class="panel-body" id="image-template">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

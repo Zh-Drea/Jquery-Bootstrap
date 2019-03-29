@@ -1,0 +1,10 @@
+#package-all,#package-detail{
+    display: none;
+}
+.pack-row-margin{
+    margin-top: 90px !important;
+}
+.button-margin{
+    margin-right: 7px !important;
+    margin-bottom: 7px !important;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/appVersion/edit.css}">
+    <script type="text/javascript" th:src="@{/js/appVersion/edit.js}"></script>
+
+    <title>编辑APP版本管理</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">基本信息</div>
+            <div class="panel-body">
+                <form class="form-horizontal col-xs-11" id="edit-form">
+                    <input type="hidden" name="id">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">设备类型</span>
+                            <select class="form-control" name="deviceType" id="device-type-select"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">APP版本</span>
+                            <input type="text" class="form-control" name="appVersion" placeholder="APP版本">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">构建版本</span>
+                            <input type="text" class="form-control" name="buildVersion" placeholder="构建版本">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">强制升级</span>
+                            <select  class="form-control" name="forcedUpdates">
+                                <option value="true">是</option>
+                                <option value="false">否</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">下载地址</span>
+                            <input type="text" class="form-control" name="downloadUrl" placeholder="下载地址">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon span-column-length">备注</span>
+                            <input type="text" class="form-control" name="remark" placeholder="备注">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

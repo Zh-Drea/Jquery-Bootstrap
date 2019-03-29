@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap-table/bootstrap-table.min.css}">
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/bootstrap-table.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/extensions/export/bootstrap-table-export.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/plugins/table-export/tableexport.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common/bootstrap-table-extends.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/dictType/main.css}">
+    <script type="text/javascript" th:src="@{/js/dictType/main.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/dictValue/main.css}">
+    <script type="text/javascript" th:src="@{/js/dictValue/main.js}"></script>
+
+    <title>字典分类信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span class="font-weight-bold">查询条件</span>
+                <button id="page-data-query-btn" type="button" class="btn btn-primary btn-xs pull-right">查&nbsp;&nbsp;询</button>
+            </div>
+            <div class="panel-body">
+                <form class="form-inline page-data-query-form" role="form" id="page-data-query-form">
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control" name="code" placeholder="分类编码">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control" name="name" placeholder="分类名称">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div id="toolbar">
+            <div class="btn-group">
+                <button id="btn-add" type="button" class="btn btn-default" data-title="添加-字典类型" data-handle="save">
+                    <span aria-hidden="true"></span>添加
+                </button>
+                <button id="btn-edit" type="button" class="btn btn-default" data-title="修改-字典类型" data-handle="update">
+                    <span aria-hidden="true"></span>修改
+                </button>
+                <button id="btn-del" type="button" class="btn btn-default" data-handle="delete">
+                    <span aria-hidden="true"></span>删除
+                </button>
+            </div>
+        </div>
+        <div>
+            <table id="page-data-table"></table>
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div id="toolbar-value">
+            <div class="btn-group">
+                <button id="btn-add-value" type="button" class="btn btn-default" data-title-value="添加-字典详细" data-handle-value="save">
+                    <span aria-hidden="true"></span>添加
+                </button>
+                <button id="btn-edit-value" type="button" class="btn btn-default" data-title-value="修改-字典详细" data-handle-value="update">
+                    <span aria-hidden="true"></span>修改
+                </button>
+                <button id="btn-del-value" type="button" class="btn btn-default" data-handle-value="delete">
+                    <span aria-hidden="true"></span>删除
+                </button>
+            </div>
+        </div>
+        <div>
+            <table id="page-value-data-table"></table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

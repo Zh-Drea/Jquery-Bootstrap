@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/sku/slideshow.css}">
+    <script type="text/javascript" th:src="@{/js/sku/slideshow.js}"></script>
+    <title>编辑轮播图信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">轮播图附件</div>
+        <div class="panel-body">
+            <div id="images-panel">
+                <div id="image-item-template">
+                    <img class="img-thumbnail resource-img-detail-big">
+                    <span class="badge image-remove-badge">&times;</span>
+                    <input type="text" value="0">
+                </div>
+            </div>
+            <hr/>
+            <div class="layui-upload">
+                <button type="button" class="layui-btn layui-btn-normal" id="select-file-btn">选择文件</button>
+                <button type="button" class="layui-btn pull-right" id="upload-file-btn">开始上传</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

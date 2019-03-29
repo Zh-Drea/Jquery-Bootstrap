@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/integralRule/edit.css}">
+    <script type="text/javascript" th:src="@{/js/integralRule/edit.js}"></script>
+
+    <title>编辑积分规则信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">基本信息</div>
+            <div class="panel-body">
+                <form class="form-horizontal col-xs-11" id="edit-form">
+                    <input type="hidden" name="id">
+                    <div class="form-horizontal col-xs-5">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">单笔订单最小抵扣积分数量</span>
+                                <input type="text" class="form-control" name="singleOrderMinDeductIntegralNum" placeholder="单笔订单最小抵扣积分数量">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">单笔订单最大抵扣积分数量</span>
+                                <input type="text" class="form-control" name="singleOrderMaxDeductIntegralNum" placeholder="单笔订单最大抵扣积分数量">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">人民币(元)换算成积分比例</span>
+                                <input type="text" class="form-control" name="rmbExchangeToIntegralRate" placeholder="人民币(元)换算成积分比例">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-xs-5 pull-right">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">积分换算成人民币比例(元)</span>
+                                <input type="text" class="form-control" name="integralExchangeToRmbRate" placeholder="积分换算成人民币比例(元)">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon enable-span">是否启用</span>
+                                <select class="form-control" name="enable">
+                                    <option value="true">是</option>
+                                    <option value="false">否</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon remark-span">备注</span>
+                                <input type="text" class="form-control" name="remark" placeholder="备注">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/logisticDetail/edit.css}">
+    <script type="text/javascript" th:src="@{/js/logisticDetail/edit.js}"></script>
+
+    <title>编辑物流信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">基本信息</div>
+            <div class="panel-body">
+                <form class="form-horizontal col-xs-11" id="edit-form">
+                    <input type="hidden" name="id" id="detail-id">
+                    <div class="form-group">
+                        <div class="input-group" id="logistic-type">
+                            <span class="input-group-addon">物流类别</span>
+                            <select class="form-control" id="logistic-detail-status" name="logisticType">
+                            </select>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group" id="logisticNo">
+                        <div class="input-group">
+                            <span class="input-group-addon">物流编码</span>
+                            <input type="text" class="form-control" name="logisticNo" placeholder="物流编码">
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="logistic-company">
+                        <div class="input-group">
+                            <span class="input-group-addon">物流公司</span>
+                            <select class="form-control" id="logistic-company-list" name="logisticCompany.id">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="deliveryStatus">
+                        <div class="input-group">
+                            <span class="input-group-addon">发货状态</span>
+                            <select class="form-control" id="delivery-status-list" name="deliveryStatus">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon span-column-length">备注</span>
+                            <input type="text" class="form-control" name="remark">
+                        </div>
+                    </div>
+
+                    <p style="margin-left: 70px;display:none" id="login">若是自提,则默认已发货</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+#image-item-template {
+    display: none;
+}
+
+.image-remove-badge:hover {
+    cursor: pointer;
+}

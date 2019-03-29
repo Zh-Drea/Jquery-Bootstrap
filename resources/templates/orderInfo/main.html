@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap-table/bootstrap-table.min.css}">
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/bootstrap-table.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/extensions/export/bootstrap-table-export.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/plugins/table-export/tableexport.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common/bootstrap-table-extends.js}"></script>
+
+    <script type="text/javascript" th:src="@{/js/orderDetail/main.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/orderInfo/main.css}">
+    <script type="text/javascript" th:src="@{/js/orderInfo/main.js}"></script>
+    <title>渠道订单信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span class="font-weight-bold">查询条件</span>
+                <button id="page-data-query-btn" type="button" class="btn btn-primary btn-xs pull-right">查&nbsp;&nbsp;询</button>
+            </div>
+            <div class="panel-body">
+                <form class="form-inline page-data-query-form" role="form" id="page-data-query-form">
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control main-select-width" name="businessOrderNo" placeholder="订单号">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control main-select-width" name="phoneNo" placeholder="用户电话">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <select class="form-control main-select-width"  id="order-status-select" name="orderStatus">
+                            <option value="">请选择订单状态</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <select class="form-control main-select-width"  id="order-pay-status-select" name="orderPayStatus">
+                            <option value="">请选择支付状态</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <input class="form-control" name="startEndPayDatetime" style="width: 310px" id="startEndPayDatetime" placeholder="订单开始-结束时区">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control main-select-width" name="receiverName" placeholder="收货人姓名">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control main-select-width" name="receiverPhoneNo" placeholder="收货人电话">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control main-select-width" name="receiverIdCardNo" placeholder="收货人身份证号">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <form th:action="@{/orderInfo/exportOrderInfoVo}" class="col-xs-offset-0 pull-left" style="margin-top:11.5px" method="post">
+        <input type="hidden" id="plt" name="exportOrderInfoParams">
+
+        <div class="form-group pull-right">
+            <div class="input-group">
+                <button type="submit" id="export-sku" class="btn btn-default">导出数据</button>
+            </div>
+        </div>
+    </form>
+
+    <div id="toolbar">
+        <div class="btn-group">
+            <button id="btn-package-query" type="button" class="btn btn-default" data-handle="package-query">
+                <span aria-hidden="true"></span>查看订单包裹
+            </button>
+        </div>
+        <div class="btn-group">
+            <button id="btn-export" type="button" class="btn btn-default" data-handle="package-export">
+                <span aria-hidden="true"></span>导出未发货包裹信息
+            </button>
+        </div>
+        <div class="btn-group">
+            <button id="btn-lead" type="button" class="btn btn-default" data-handle="package-lead">
+                <span aria-hidden="true"></span>导入已处理包裹信息
+            </button>
+        </div>
+
+    </div>
+
+    <table id="page-data-table"></table>
+
+    <div id="toolbar-detail">
+        <div class="btn-group">
+            <button id="btn-img-query" type="button" class="btn btn-default">
+                <span aria-hidden="true"></span>查看身份证
+            </button>
+        </div>
+
+        <div class="btn-group">
+            <button id="btn-info-edit" type="button" class="btn btn-default">
+                <span aria-hidden="true"></span>修改信息
+            </button>
+        </div>
+
+        <div class="btn-group">
+            <button id="btn-id-card-image" type="button" class="btn btn-default">
+                <span aria-hidden="true"></span>下载身份证照
+            </button>
+        </div>
+    </div>
+
+    <table id="page-detail-data-table"></table>
+</div>
+</body>
+</html>

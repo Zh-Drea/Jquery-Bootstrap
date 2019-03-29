@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap-multiselect/bootstrap-multiselect.css}">
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-multiselect/bootstrap-multiselect.min.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/spu/edit.css}">
+    <script type="text/javascript" th:src="@{/js/spu/edit.js}"></script>
+    <title>商品分类信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">基本信息</div>
+            <div class="panel-body">
+                <form class="form-horizontal col-xs-11" id="edit-form">
+                    <input type="hidden" name="id">
+                    <div class="form-horizontal col-xs-5">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon spu-span-length">商品分类</span>
+                                <select class="form-control" id="goodsGroup-list" name="goodsGroup.id">
+                                    <option value=''>请选择</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon spu-span-length">品牌名称</span>
+                                <select class="form-control" id="brand-list" name="brand.id">
+                                    <option value=''>请选择</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon spu-span-length">产地名称</span>
+                                <select class="form-control" id="origin-list" name="origin.id">
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon spu-span-length">商品状态</span>
+                                <select class="form-control" id="goods-type-list" name="goodsType">
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">国家馆名称</span>
+                                <select class="form-control" id="country-pavilion-list" name="countryPavilion.id">
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon spu-span-length">是否热门</span>
+                                <select class="form-control" name="hot">
+                                    <option value="false">否</option>
+                                    <option value="true">是</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon spu-span-length">商品编码</span>
+                                <input type="text" class="form-control" name="code"  placeholder="商品编码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon spu-span-length">商品名称</span>
+                                <input type="text" class="form-control" name="name" placeholder="商品名称">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-xs-5 pull-right">
+                        <!--<div class="form-group">-->
+                            <!--<div class="input-group">-->
+                                <!--<span class="input-group-addon">用途分类</span>-->
+                                <!--<select id="usage-group-multiple-selected" multiple="multiple" style="border-left:none;border-radius:0px;">-->
+                                <!--</select>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">简介描述</span>
+                                <input type="text" class="form-control" name="summary" placeholder="简介描述">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">保质日期</span>
+                                <input class="form-control length-select" name="shelfLifeDate" id="shelfLifeDate" placeholder="保质日期">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">售后天数</span>
+                                <input type="text" class="form-control" name="afterSaleDays" placeholder="售后天数" value="7">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">代理商单价</span>
+                                <input type="text" class="form-control" name="agentUnitPrice" placeholder="代理商单价">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">普通用户单价</span>
+                                <input type="text" class="form-control" name="retailUnitPrice" placeholder="普通用户单价">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">单次下单最小数量</span>
+                                <input type="text" class="form-control" name="singleOrderMinNum" placeholder="单次下单最小数量" value="1">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">单次下单最大数量</span>
+                                <input type="text" class="form-control" name="singleOrderMaxNum" placeholder="单次下单最大数量" value="200">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

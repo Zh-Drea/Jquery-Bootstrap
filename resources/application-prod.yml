@@ -1,0 +1,31 @@
+global-config:
+  swagger:
+    enable: false
+
+server:
+  port: 8081
+
+spring:
+  redis:
+    host: r-bp12b17285a357e4.redis.rds.aliyuncs.com
+    port: 6379
+    password: '_Ba9a6b6'
+    database: 0
+    ssl: false
+  datasource:
+    druid:
+      url: jdbc:mysql://rm-bp1u31e1oja3bb5jq.mysql.rds.aliyuncs.com:3306/shop_prod?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: dbuser
+      password: 1Ebad1a23Ffb
+
+system-config:
+  api-gateway-params:
+    outer-main-url: 'https://app.young-global.com/'
+    inner-main-url: 'https://app.young-global.com/'
+  aliyun-oss-params:
+    resource-bucket-url: 'https://young-shop-prod.oss-cn-hangzhou.aliyuncs.com/'
+  resource-server-params:
+    attachment-origin: MANAGER
+  oauth-params:
+    client-id: manager
+    client-secret: 7697285260da

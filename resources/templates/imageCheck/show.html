@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/imageCheck/show.css}">
+    <script type="text/javascript" th:src="@{/js/imageCheck/show.js}"></script>
+
+    <title>身份证信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">基本信息</div>
+            <div class="panel-body" id="image-template">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

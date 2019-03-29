@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/systemLog/query.css}">
+    <script type="text/javascript" th:src="@{/js/systemLog/query.js}"></script>
+
+    <title>查看明细</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-xs-11">
+            </br></br>
+            <strong>请求参数:</strong><p class="demo-position" id="params"></p>
+            </br></br>
+            <strong>返回结果:</strong><p class="demo-position" id="result"></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

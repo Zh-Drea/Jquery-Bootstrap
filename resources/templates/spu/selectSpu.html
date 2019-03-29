@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap-table/bootstrap-table.min.css}">
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/bootstrap-table.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/extensions/export/bootstrap-table-export.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/plugins/table-export/tableexport.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common/bootstrap-table-extends.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/spu/selectSpu.css}">
+    <script type="text/javascript" th:src="@{/js/spu/selectSpu.js}"></script>
+    <title>SPU信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span class="font-weight-bold">查询条件</span>
+                <button id="page-data-query-btn" type="button" class="btn btn-primary btn-xs pull-right">查&nbsp;&nbsp;询</button>
+            </div>
+            <div class="panel-body">
+                <form class="form-inline page-data-query-form" role="form" id="page-data-query-form">
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control main-select-width" name="code" placeholder="商品编码">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control main-select-width" name="name" placeholder="商品名称">
+                    </div>
+
+                    <div class="form-group col-xs-3">
+                        <select class="form-control main-select-width" id="brand-list" name="brandId">
+                            <option value="">选择品牌</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-xs-3">
+                        <select class="form-control main-select-width" id="origin-list" name="originId">
+                            <option value="">选择产地</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-xs-3">
+                        <select class="form-control main-select-width" id="country-pavilion-list" name="countryPavilionId">
+                            <option value="">选择国家馆</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-xs-3">
+                        <select class="form-control main-select-width" id="goodsGroup-list" name="goodsGroupId">
+                            <option value="">选择商品分类</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <select class="form-control main-select-width" name="hot">
+                            <option value="">是否热门</option>
+                            <option value="true">是</option>
+                            <option value="false">否</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <select class="form-control main-select-width"  id="goods-state-list" name="goodsState">
+                            <option value="">选择上架状态</option>
+                        </select>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="toolbar">
+        <div class="btn-group">
+
+        </div>
+    </div>
+
+    <table id="page-data-table"></table>
+</div>
+</body>
+</html>

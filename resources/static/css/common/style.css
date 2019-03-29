@@ -1,0 +1,124 @@
+body {
+    padding: 5px 0 !important;
+}
+
+a input button select {
+    outline: none !important;
+}
+
+a:FOCUS, button:FOCUS, select:FOCUS {
+    outline: none !important;
+}
+
+td {
+    word-break: keep-all !important;
+    white-space: nowrap !important;
+}
+
+.page-data-query-form .form-group {
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+}
+
+.resource-img-thumbnail {
+    width: 35px;
+    height: 35px;
+}
+
+.resource-img-thumbnail-big {
+    width: 120px;
+    height: 120px;
+}
+
+.layui-upload-choose {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100px;
+}
+
+.select-item-length {
+    padding-left: 42px;
+    padding-right: 42px;
+}
+
+.select-six-length {
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.span-column-length {
+    padding-left: 26px;
+    padding-right: 26px;
+}
+
+.main-select-width {
+    width: 172px !important;
+}
+
+.multiselect {
+    border-bottom-left-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+}
+
+.span-group-length {
+    padding-left: 26px;
+    padding-right: 26px;
+}
+.common-show-img {
+    width: 400px;
+    height:200px;
+    margin-bottom: 35px;
+    margin-left: 25px;
+}
+
+/*
+*多选框样式
+*/
+
+.multiselect-container{ /*下拉框的样式*/
+    width:195px;
+}
+.multiselect-container>li>a>label{
+    line-height: 28px;
+    font-size: 12px;
+}
+.multiselect-container>li>a>label>input[type='checkbox'] {
+    margin-top: 7px;
+}
+.multiselect-item.multiselect-all.active{
+    border-bottom:1px solid #ccc !important;
+}
+.multiselect.dropdown-toggle.btn.btn-default:link,.multiselect.dropdown-toggle.btn.btn-default:visited,.multiselect.dropdown-toggle.btn.btn-default:focus,.multiselect.dropdown-toggle.btn.btn-default:hover,.multiselect.dropdown-toggle.btn.btn-default:active, .btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default{
+    background: #fff;
+    outline: none;
+    border:1px solid #ccc;
+    box-shadow: none;
+}
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover{
+    background: #474752;
+}
+.multiselect-selected-text{
+    font-size:13px;
+    width:100%;
+    font-style: normal;
+    float: left;
+    text-align: left;
+}
+.btn.btn-default{
+    padding-right:15px;
+}
+
+/*统一select格式*/
+/*select {*/
+    /*width: 120px;*/
+    /*height: 28px;*/
+    /*padding: 0 5px;*/
+    /*border: 1px solid #e5e5e5;*/
+    /*-webkit-appearance: none;*/
+    /*-moz-appearance: none;*/
+    /*appearance: none;*/
+    /*background: url("../../images/select.png") no-repeat scroll right center transparent;*/
+    /*padding-right: 14px;*/
+/*}*/
+/*select::-ms-expand {display: none;}*/

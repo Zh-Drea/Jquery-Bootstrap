@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap-multiselect/bootstrap-multiselect.css}">
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-multiselect/bootstrap-multiselect.min.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/withdrawRule/edit.css}">
+    <script type="text/javascript" th:src="@{/js/withdrawRule/edit.js}"></script>
+
+    <title>提现规则信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">基本信息</div>
+            <div class="panel-body">
+                <form class="form-horizontal col-xs-11" id="edit-form">
+                    <input type="hidden" name="id">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">单笔订单最小提现金额</span>
+                            <input type="text" class="form-control" name="singleOrderMinWithdrawAmount" placeholder="单笔订单最小提现金额">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">单笔订单最大提现金额</span>
+                            <input type="text" class="form-control" name="singleOrderMaxWithdrawAmount" placeholder="单笔订单最大提现金额">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">奖金币换算成人民币比例(元)</span>
+                            <input type="text" class="form-control" name="bonusCoinExchangeToRmbRate" placeholder="奖金币换算成人民币比例(元)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">人民币换算成奖金币比例(元)</span>
+                            <input type="text" class="form-control" name="rmbExchangeToBonusCoinRate" placeholder="人民币换算成奖金币比例(元)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">提现费率(千分比)</span>
+                            <input type="text" class="form-control" name="withdrawRate" placeholder="提现费率(千分比)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">单日最大提现次数</span>
+                            <input type="text" class="form-control" name="singleDayMaxWithdrawNum" placeholder="单日最大提现次数">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">单日最大累计提现金额</span>
+                            <input type="text" class="form-control" name="singleDayMaxWithdrawTotalAmount" placeholder="单日最大累计提现金额">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">提现时间</span>
+                            <select id="goods-group-multiple-selected" multiple="multiple" style="border-left:none;border-radius:0px;">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">备注</span>
+                            <input type="text" class="form-control" name="remark" placeholder="备注">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

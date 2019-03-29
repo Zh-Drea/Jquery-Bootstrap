@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap-table/bootstrap-table.min.css}">
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/bootstrap-table.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/extensions/export/bootstrap-table-export.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/plugins/table-export/tableexport.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common/bootstrap-table-extends.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/goodsModel/main.css}">
+    <script type="text/javascript" th:src="@{/js/goodsModel/main.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/specialServiceOption/main.css}">
+    <script type="text/javascript" th:src="@{/js/specialServiceOption/main.js}"></script>
+
+    <title>仓库信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span class="font-weight-bold">查询条件</span>
+                <button id="page-data-query-btn" type="button" class="btn btn-primary btn-xs pull-right">查&nbsp;&nbsp;询</button>
+            </div>
+            <div class="panel-body">
+                <form class="form-inline page-data-query-form" role="form" id="page-data-query-form">
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control" name="code" placeholder="型号编号">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control" name="name" placeholder="型号名称">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+        <div class="col-xs-6">
+            <div id="toolbar">
+                <div class="btn-group">
+                    <button id="btn-add" type="button" class="btn btn-default" data-title="添加-型号信息" data-handle="save">
+                        <span aria-hidden="true"></span>添加
+                    </button>
+                    <button id="btn-edit" type="button" class="btn btn-default" data-title="修改-型号信息" data-handle="update">
+                        <span aria-hidden="true"></span>修改
+                    </button>
+                    <button id="btn-del" type="button" class="btn btn-default" data-handle="delete">
+                        <span aria-hidden="true"></span>删除
+                    </button>
+                </div>
+            </div>
+            <div>
+                <table id="page-data-table"></table>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div id="toolbar-option">
+                <div class="btn-group">
+                    <button id="btn-add-option" type="button" class="btn btn-default" data-title-option="添加-特殊服务信息" data-handle-option="save">
+                        <span aria-hidden="true"></span>添加
+                    </button>
+                    <button id="btn-edit-option" type="button" class="btn btn-default" data-title-option="修改-特殊服务信息" data-handle-option="update">
+                        <span aria-hidden="true"></span>修改
+                    </button>
+                    <button id="btn-del-option" type="button" class="btn btn-default" data-handle-option="delete">
+                        <span aria-hidden="true"></span>删除
+                    </button>
+                </div>
+            </div>
+            <div>
+                <table id="page-option-data-table"></table>
+            </div>
+        </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+#attr-edit-from .form-group {
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+}
+
+.badge:hover {
+    cursor: pointer;
+}
+
+#attr-item-template {
+    display: none !important;
+}
+
+.attr-option-template {
+    display: none !important;
+}

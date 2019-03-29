@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/audit/edit.css}">
+    <script type="text/javascript" th:src="@{/js/audit/edit.js}"></script>
+
+    <title>审核</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">基本信息</div>
+            <div class="panel-body">
+                <form class="form-horizontal col-xs-11" id="edit-form">
+                    <input type="hidden" name="applyRefundId">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon audit-select">退款状态</span>
+                            <select class="form-control" name="applyRefundProgress" id="apply-refund-progress-select">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="refundAmount">
+                        <div class="input-group">
+                            <span class="input-group-addon">同意退款金额</span>
+                            <input type="text" class="form-control" name="agreeRefundAmount" placeholder="同意退款金额">
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="refuseReason">
+                        <div class="input-group">
+                            <span class="input-group-addon">退款拒绝理由</span>
+                            <input type="text" class="form-control" name="rejectReason" placeholder="退款拒绝理由">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon audit-select">详细备注</span>
+                            <input type="text" class="form-control" name="remark" placeholder="详细备注">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

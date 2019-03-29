@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/systemConfig/edit.css}">
+    <script type="text/javascript" th:src="@{/js/systemConfig/edit.js}"></script>
+
+    <title>编辑系统配置信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid col-xs-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">基本信息</div>
+            <div class="panel-body">
+                <form class="form-horizontal col-xs-11" id="edit-form">
+                    <input type="hidden" name="id">
+                    <input type="hidden" name="invitationCodeShareImageAttachment.id" id="invitationCodeShareImageAttachmentId">
+                    <input type="hidden" name="appDownloadImageAttachment.id" id="appDownloadImageAttachmentId">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">网关外网地址</span>
+                            <input type="text" class="form-control" name="apiGatewayOuterMainUrl" placeholder="网关外网地址">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">网关内网地址</span>
+                            <input type="text" class="form-control" name="apiGatewayInnerMainUrl" placeholder="网关内网地址">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">webapp地址</span>
+                            <input type="text" class="form-control" name="webappOuterMainUrl" placeholder="webapp地址">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">webapp邀请码分享地址</span>
+                            <textarea type="text" class="form-control" name="invitationCodeShareUrl" placeholder="webapp邀请码分享地址"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">webapp邀请码分享标题</span>
+                            <textarea type="text" class="form-control" name="invitationCodeShareTitle" placeholder="webapp邀请码分享标题"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">webapp邀请码分享描述</span>
+                            <textarea type="text" class="form-control" name="invitationCodeShareDesc" placeholder="webapp邀请码分享图标"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid col-xs-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">webapp邀请码分享图标</div>
+            <div class="panel-body">
+                <img class="img-thumbnail resource-img-thumbnail-big" id="attachment-image">
+                <hr/>
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn layui-btn-normal" id="select-file-btn">选择文件</button>
+                    <button type="button" class="layui-btn pull-right" id="upload-file-btn">开始上传</button>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">app下载二维码图片附件</div>
+            <div class="panel-body">
+                <img class="img-thumbnail resource-img-thumbnail-big" id="attachment-app-image">
+                <hr/>
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn layui-btn-normal" id="select-file-app-btn">选择文件</button>
+                    <button type="button" class="layui-btn pull-right" id="upload-file-app-btn">开始上传</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

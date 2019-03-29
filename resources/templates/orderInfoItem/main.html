@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap-table/bootstrap-table.min.css}">
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/bootstrap-table.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/extensions/export/bootstrap-table-export.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/plugins/table-export/tableexport.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common/bootstrap-table-extends.js}"></script>
+
+    <script type="text/javascript" th:src="@{/js/orderInfoItemRefSpecialServiceOption/main.js}"></script>
+
+    <script type="text/javascript" th:src="@{/js/orderPackageDetail/edit.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/orderInfoItem/main.css}">
+    <script type="text/javascript" th:src="@{/js/orderInfoItem/main.js}"></script>
+
+    <title>查看订单信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="btn-group" id="item-template">
+                <button id="btn-all-query" type="button" class="btn btn-default button-margin" data-handle="package-query">
+                    <span aria-hidden="true">全部包裹</span>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button id="btn-package-query" type="button" class="btn btn-default button-margin" data-handle="package-query">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+        <div class="col-xs-6">
+        </div>
+    </div>
+    <div class="row margin-tip" id="skuItem">
+        <div class="col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="font-weight-bold">商品明细</span>
+                </div>
+                <div class="panel-body">
+                    <div class="col-xs-12">
+                        <div class="col-xs-3">
+                            <p id="skuRecordNo"></p>
+                        </div>
+                        <div class="col-xs-3">
+                            <p id="spuCode"></p>
+                        </div>
+                        <div class="col-xs-3">
+                            <p id="skuName"></p>
+                        </div>
+                        <div class="col-xs-3">
+                            <p id="skuRefGoodsAttributeOptions"></p>
+                        </div>
+                        <div class="col-xs-3">
+                            <p id="skuRecordPrice"></p>
+                        </div>
+                        <div class="col-xs-3">
+                            <p id="skuCostPrice"></p>
+                        </div>
+                        <div class="col-xs-3">
+                            <p id="skuAgentPrice"></p>
+                        </div>
+                        <div class="col-xs-3">
+                            <p id="skuRetailPrice"></p>
+                        </div>
+                        <div class="col-xs-3">
+                            <p id="skuTaxPrice"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row margin-tip">
+        <div class="col-xs-12">
+            <div id="toolbar-item">
+            </div>
+            <div>
+                <table id="page-item-data-table"></table>
+            </div>
+        </div>
+    </div>
+    <div class="row margin-tip">
+        <div class="col-xs-12">
+            <div id="toolbar-option">
+                <div class="btn-group">
+                </div>
+            </div>
+            <div>
+                <table id="page-option-data-table"></table>
+            </div>
+        </div>
+    </div>
+    <div class="row pack-row-margin">
+        <div class="col-xs-6">
+            <div class="panel panel-primary" id="package-detail">
+                <div class="panel-heading">
+                    <span class="font-weight-bold">包裹明细</span>
+                </div>
+                <div class="panel-body">
+                    <div class="col-xs-5">
+                        <p id="serialNo"></p>
+                        <p id="packNo"></p>
+                        <p id="repertory"></p>
+                        <p id="totalWeight"></p>
+                        <p id="packageSplitType"></p>
+                        <p id="receiverReceivingStatus"></p>
+                        <p id="confirmReceivedDatetime"></p>
+                        <p id="signedDatetime"></p>
+                    </div>
+                    <div class="col-xs-7">
+                        <p id="senderName"></p>
+                        <p id="senderAddress"></p>
+                        <p id="senderPhoneNo"></p>
+                        <p id="deliveryStatus"></p>
+                        <p id="deliverDatetime"></p>
+                        <p id="remarkDetail"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="panel panel-primary" id="package-all">
+                <div class="panel-heading">
+                    <span class="font-weight-bold">包裹物流</span>
+                    <button type="button" id="page-package-del-btn" class="btn btn-default btn-xs pull-right">删&nbsp;除&nbsp;物&nbsp;流</button>
+                    <button type="button" id="page-package-edit-btn" class="btn btn-default btn-xs pull-right" style="margin: 0 15px">编&nbsp;辑&nbsp;物&nbsp;流</button>
+                </div>
+                <div id="package-display">
+                    <div class="panel-body"  id="package-logistic">
+                        <div class="col-xs-4">
+                            <p id="logisticNo"></p>
+                            <p id="logisticCompany"></p>
+                            <p id="lastQuerySuccessDatetime"></p>
+                            <p id="LogisticState"></p>
+                            <p id="lastLogisticQueryStatus"></p>
+                            <p id="subscribeStatus"></p>
+                        </div>
+                        <div class="col-xs-8">
+                            <p id="subscribeSuccessDatetime"></p>
+                            <p id="successNum" ></p>
+                            <p id="failedNum" ></p>
+                            <p id="queryStatusDesc"></p>
+                            <p id="remark"></p>
+                        </div>
+                        <div class="col-xs-12" id="head-line">
+                            <strong>物流明细:</strong>
+                            <p id="logisticFlowLines"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

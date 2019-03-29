@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+    <link rel="stylesheet" th:href="@{/css/question/edit.css}">
+    <script type="text/javascript" th:src="@{/js/question/edit.js}"></script>
+
+    <title>编辑物流公司信息</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">基本信息</div>
+            <div class="panel-body">
+                <form class="form-horizontal col-xs-11" id="edit-form">
+                    <input type="hidden" name="id">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon span-length">问题</span>
+                            <textarea class="form-control" name="problem" placeholder="问题"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">问题类型</span>
+                            <select class="form-control" name="questionType" id="question-type-list">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon span-length">答案</span>
+                            <textarea class="form-control" name="answer" placeholder="答案"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">排序规则</span>
+                            <input type="text" class="form-control" name="orderNum" placeholder="排序规则" value="0">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">是否启用</span>
+                            <select class="form-control" name="enable">
+                                <option value="true">是</option>
+                                <option value="false">否</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

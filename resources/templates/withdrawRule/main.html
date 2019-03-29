@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap-table/bootstrap-table.min.css}">
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/bootstrap-table.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/extensions/export/bootstrap-table-export.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/plugins/table-export/tableexport.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common/bootstrap-table-extends.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/withdrawRule/main.css}">
+    <script type="text/javascript" th:src="@{/js/withdrawRule/main.js}"></script>
+    <title>提现规则</title>
+</head>
+<body>
+<div class="container-fluid table-top">
+    <div id="toolbar">
+        <div class="btn-group">
+            <button id="btn-add" type="button" class="btn btn-default" data-title="添加-提现规则" data-handle="save">
+                <span aria-hidden="true"></span>添加
+            </button>
+            <button id="btn-edit" type="button" class="btn btn-default" data-title="修改-提现规则" data-handle="update">
+                <span aria-hidden="true"></span>修改
+            </button>
+        </div>
+    </div>
+    <table id="page-data-table"></table>
+</div>
+</body>
+</html>

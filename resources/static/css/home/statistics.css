@@ -1,0 +1,60 @@
+.ref-all{
+    height: 300px;
+    width: 100% !important;
+}
+.home-ref-font{
+    padding-top: 100px;
+    text-align: center;
+    color:  #87CEFF
+}
+.box-div{
+    position: relative;
+    padding-top: 133px;
+}
+.panel-body{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-bottom: 0px !important;
+}
+.query-left-box{
+    width: 50%;
+    height: 40px;
+    color:  #87CEFF;
+    line-height: 30px;
+    border-top: 0.6px solid #bce8f1;
+    border-right: 0.6px solid #bce8f1;
+    float: left
+}
+.query-right-box{
+    width: 50%;
+    height: 40px;
+    color:  #87CEFF;
+    line-height: 30px;
+    border-top: 0.6px solid #bce8f1;
+    float: left
+}
+.detail-left-box{
+    width: 33.333333333333333%;
+    height: 40px;
+    color:  #87CEFF;
+    line-height: 30px;
+    border-top: 0.6px solid #bce8f1;
+    border-right: 0.6px solid #bce8f1;
+    float: left
+}
+.detail-right-box{
+    width: 33.333333333333333%;
+    height: 40px;
+    color:  #87CEFF;
+    line-height: 30px;
+    border-top: 0.6px solid #bce8f1;
+    float: left
+}
+.query-box-font{
+    padding-left: 20%;
+    line-height: 40px;
+}
+.detail-box-font {
+    padding-left: 20%;
+    line-height: 40px;
+}

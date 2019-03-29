@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap-table/bootstrap-table.min.css}">
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/bootstrap-table.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/extensions/export/bootstrap-table-export.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/plugins/table-export/tableexport.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common/bootstrap-table-extends.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/home/statistics.css}">
+    <script type="text/javascript" th:src="@{/js/home/statistics.js}"></script>
+    <title>首页统计</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid col-xs-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <span class="font-weight-bold">系统信息提示</span>
+            </div>
+            <div class="panel-body">
+                <div class="col-xs-6">
+                    <div class="panel panel-info">
+                        <div class="panel-body">
+                            <div class="ref-all">
+                                <h3 class="home-ref-font">申请退款</h3>
+                                <div class="box-div">
+                                    <div class="query-left-box" id="ref-pro">
+                                        <strong class="query-box-font"> 退款处理中的退款订单总数 </strong>
+                                    </div>
+                                    <div class="query-right-box" id="ref-aduit">
+                                        <strong class="query-box-font"> 未审核的的退款订单总数 </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="panel panel-info">
+                        <div class="panel-body">
+                            <div class="ref-all">
+                                <h3 class="home-ref-font">物流查询</h3>
+                                <div class="box-div">
+                                    <div class="detail-left-box" id="order-info-wait">
+                                        <strong class="detail-box-font"> 订单未发货个数 </strong>
+                                    </div>
+                                    <div class="detail-left-box" id="logistic-num">
+                                        <strong class="detail-box-font"> 物流不正常数量</strong>
+                                    </div>
+                                    <div class="detail-right-box" id="order-not-deliver">
+                                        <strong class="detail-box-font"> 包裹未发货的数量</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: copy(~{::link},~{::script},~{::title})}">
+
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap-table/bootstrap-table.min.css}">
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/bootstrap-table.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js}"></script>
+    <script type="text/javascript" th:src="@{/plugins/bootstrap-table/extensions/export/bootstrap-table-export.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/plugins/table-export/tableexport.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common/bootstrap-table-extends.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/afterSales/main.css}">
+    <script type="text/javascript" th:src="@{/js/afterSales/main.js}"></script>
+    <title>售后信息展示</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span class="font-weight-bold">查询条件</span>
+                <button id="page-data-query-btn" type="button" class="btn btn-primary btn-xs pull-right">查&nbsp;&nbsp;询</button>
+            </div>
+            <div class="panel-body">
+                <form class="form-inline page-data-query-form" role="form" id="page-data-query-form">
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control" name="serialNo" placeholder="退款流水号">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control" name="businessOrderNo" placeholder="业务订单号">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <select class="form-control main-select-width"  id="apply-refund-progress-select" name="applyRefundProgress">
+                            <option value="">请选择退款进度</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <select class="form-control main-select-width"  id="after-sale-refund-type-select" name="afterSaleRefundType">
+                            <option value="">请选择售后退款类型</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="toolbar">
+        <div class="btn-group">
+            <button id="btn-query" type="button" class="btn btn-default">
+                <span aria-hidden="true"></span>查看退款照片
+            </button>
+        </div>
+        <div class="btn-group">
+            <button id="btn-item-query" type="button" class="btn btn-default">
+                <span aria-hidden="true"></span>查看退款明细
+            </button>
+        </div>
+        <div class="btn-group">
+            <button id="btn-audit" type="button" class="btn btn-default">
+                <span aria-hidden="true"></span>审核
+            </button>
+        </div>
+        <div class="btn-group">
+            <button id="btn-money-agree" type="button" class="btn btn-default">
+                <span aria-hidden="true"></span>执行退款
+            </button>
+        </div>
+    </div>
+
+    <table id="page-data-table"></table>
+    <strong id="managerType" th:text="${session.manager.managerType}"></strong>
+</div>
+</body>
+</html>
